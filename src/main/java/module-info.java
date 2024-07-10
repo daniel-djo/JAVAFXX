@@ -11,6 +11,8 @@ module de.game.javafxx {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens de.game.javafxx to javafx.fxml;
-    exports de.game.javafxx;
+    opens de.game to javafx.fxml;
+    exports de.game;
+    exports de.game.controllers;
+    opens de.game.controllers to javafx.fxml;
 }
