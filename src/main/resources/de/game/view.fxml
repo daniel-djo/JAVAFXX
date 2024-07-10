@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="de.game.controllers.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Test2" onAction="#onFirstButtonClick"/>
-</VBox>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.game.controllers.Controller">
+    <top>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Start Game" onAction="#startGame"/>
+        </HBox>
+    </top>
+    <center>
+        <GridPane fx:id="gameGrid" hgap="1" vgap="1">
+            <!-- Hier wird das Spielfeld eingefügt -->
+        </GridPane>
+    </center>
+</BorderPane>
+
