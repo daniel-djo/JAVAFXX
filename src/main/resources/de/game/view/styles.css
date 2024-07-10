@@ -1,0 +1,20 @@
+/* styles.css */
+#gameMenu {
+    -fx-background-image: url("pictures/background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.button {
+    -fx-background-color: #808080; /* Hintergrundfarbe der Schaltfläche */
+    -fx-text-fill: white; /* Textfarbe */
+    -fx-font-size: 16px; /* Schriftgröße */
+    -fx-padding: 10px 20px; /* Innenabstand */
+    -fx-background-radius: 5px; /* Abgerundete Ecken */
+    -fx-border-color: #000000; /* Randfarbe */
+    -fx-border-width: 2px; /* Randbreite */
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Hintergrundfarbe bei Mausüberführung */
+}
