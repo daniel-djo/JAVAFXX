@@ -1,4 +1,4 @@
-module de.game.javafxx {
+module de.game {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
