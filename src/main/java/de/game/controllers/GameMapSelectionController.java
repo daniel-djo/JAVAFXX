@@ -15,17 +15,17 @@ public class GameMapSelectionController {
 
     @FXML
     private void createMapLI() throws IOException {
-        switchToGame(10, 10);
+        switchToGame(19, 10);
     }
 
     @FXML
     private void createMapES() throws IOException {
-        switchToGame(15, 15); 
+        switchToGame(19, 17); 
     }
 
     @FXML
     private void createMapPD() throws IOException {
-        switchToGame(20, 20); 
+        switchToGame(26, 14); 
     }
 
     private void switchToGame(int rows, int cols) throws IOException {

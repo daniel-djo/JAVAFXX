@@ -1,7 +1,6 @@
 package de.game.controllers;
 
 import de.game.Main;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import java.io.IOException;
 
