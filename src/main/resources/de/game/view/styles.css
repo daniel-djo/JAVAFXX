@@ -27,3 +27,38 @@
     -fx-text-fill: rgb(0, 0, 0); 
     -fx-padding: 10px;
 }
+
+#plain {
+    -fx-background-image: url('pictures/map/gras.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#wood {
+    -fx-background-image: url('pictures/map/forest.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#mountain {
+    -fx-background-image: url('pictures/map/mountain.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#sea {
+    -fx-background-image: url('pictures/map/water.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#street {
+    -fx-background-image: url('pictures/map/road.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
