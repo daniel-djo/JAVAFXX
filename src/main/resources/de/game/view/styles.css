@@ -5,18 +5,37 @@
 }
 
 .menuButton {
-    -fx-background-color: #808080; /* Hintergrundfarbe der Schaltfläche */
-    -fx-text-fill: white; /* Textfarbe */
-    -fx-font-size: 16px; /* Schriftgröße */
-    -fx-padding: 10px 20px; /* Innenabstand */
-    -fx-background-radius: 5px; /* Abgerundete Ecken */
-    -fx-border-color: #000000; /* Randfarbe */
-    -fx-border-width: 2px; /* Randbreite */
+    -fx-background-color: linear-gradient(to bottom, #7e7e7e, #5e5e5e);
+    -fx-background-radius: 20px; /* Rundung des Buttons */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
+    -fx-background-image: url('/de/game/view/pictures/css/buttonMenu.png');
+    -fx-background-size: cover;
+    -fx-background-position: center; /* Zentriert das Hintergrundbild */
+    -fx-background-repeat: no-repeat; /* Verhindert Wiederholung des Hintergrundbilds */
+    -fx-cursor: hand; /* Zeigt die Handcursor-Form beim Überfahren an */
+    -fx-min-width: 200px; /* Mindestbreite des Buttons */
+    -fx-min-height: 40px; /* Mindesthöhe des Buttons */
+    -fx-max-width: 200px; /* Maximale Breite des Buttons */
+    -fx-max-height: 40px; /* Maximale Höhe des Buttons */
+    -fx-alignment: center; /* Zentriert den Text horizontal im Button */
 }
 
 .menuButton:hover {
-    -fx-background-color: #45a049; /* Hintergrundfarbe bei Mausüberführung */
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.8), 10, 0, 0, 0);
+    -fx-transition: border-color 0.3s ease; /* Animiert den Rahmeneffekt */
 }
+
+
+
+
 
 .imagemap1, .imagemap2, .imagemap3 {
     -fx-background-image: url("pictures/background.png");
