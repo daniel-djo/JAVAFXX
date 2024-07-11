@@ -18,17 +18,21 @@ public class Tile extends Button {
     private void setTileAppearance() {
         switch (type) {
             case PLAIN:
-                setStyle("-fx-background-color: lightgreen;");
+                setId("plain");
                 break;
             case WOOD:
-                setStyle("-fx-background-color: darkgreen;");
+                setId("wood");
                 break;
             case MOUNTAIN:
-                setStyle("-fx-background-color: gray;");
+                setId("mountain");
                 break;
             case SEA:
-                setStyle("-fx-background-color: blue;");
+                setId("sea");
+                break;
+            case STREET:
+                setId("street");
                 break;
         }
-    }
+    }    
+    
 }

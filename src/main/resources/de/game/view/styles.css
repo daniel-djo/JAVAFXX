@@ -40,9 +40,44 @@
     -fx-min-width: 200px;
     -fx-text-fill: rgb(0, 0, 0);
     -fx-padding: 10px;
-    -fx-cursor: hand;
+   -fx-cursor: hand;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
     -fx-shape: "M 20 0 L 180 0 Q 200 0, 200 20 L 200 180 Q 200 200, 180 200 L 20 200 Q 0 200, 0 180 L 0 20 Q 0 0, 20 0 Z";
+}
+
+#plain {
+    -fx-background-image: url('pictures/map/gras.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#wood {
+    -fx-background-image: url('pictures/map/forest.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#mountain {
+    -fx-background-image: url('pictures/map/mountain.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#sea {
+    -fx-background-image: url('pictures/map/water.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#street {
+    -fx-background-image: url('pictures/map/road.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
 
 .imagemap1:hover, .imagemap2:hover, .imagemap3:hover {
