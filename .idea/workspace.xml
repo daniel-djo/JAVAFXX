@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2994a791-03bc-48b8-88a8-d346975c098e" name="Changes" comment="Created Startmenu">
+    <list default="true" id="2994a791-03bc-48b8-88a8-d346975c098e" name="Changes" comment="Added cmd messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/game/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/game/controllers/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,7 @@
       <workItem from="1720623830806" duration="3858000" />
       <workItem from="1720627703284" duration="1452000" />
       <workItem from="1720681286115" duration="3236000" />
-      <workItem from="1720684880735" duration="3499000" />
+      <workItem from="1720684880735" duration="4264000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -164,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720684939447</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added cmd messages">
+      <option name="closed" value="true" />
+      <created>1720692401575</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720692401575</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +192,7 @@
     <MESSAGE value="Added packages" />
     <MESSAGE value="Added fields" />
     <MESSAGE value="Created Startmenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Startmenu" />
+    <MESSAGE value="Added cmd messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added cmd messages" />
   </component>
 </project>
