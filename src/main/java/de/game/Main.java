@@ -18,7 +18,7 @@ public class Main extends Application {
         System.out.println("'mainMenu.fxml' successfully loaded: " + (root != null));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/de/game/view/styles.css").toExternalForm());
-        primaryStage.setTitle("Advance Wars");
+        primaryStage.setTitle("Modern Wars");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

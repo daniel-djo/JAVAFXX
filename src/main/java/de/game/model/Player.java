@@ -7,7 +7,6 @@ public class Player {
         this.name = name;
     }
 
-    // Getter und Setter
     public String getName() {
         return name;
     }

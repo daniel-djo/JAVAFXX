@@ -1,39 +1,52 @@
 package de.game.model;
 
-public class Unit {
-    private String name;
-    private int health;
-    private int attack;
+import javafx.scene.control.Button;
 
-    public Unit(String name, int health, int attack) {
-        this.name = name;
-        this.health = health;
-        this.attack = attack;
+public class Unit extends Button {
+    private UnitType type;
+
+    public Unit(UnitType type) {
+        this.type = type;
+        setUnitAppearance();
     }
 
-    // Getter und Setter
-    public String getName() {
-        return name;
+    public void setType(UnitType type) {
+        this.type = type;
+        setUnitAppearance();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public UnitType getType() {
+        return type;
     }
 
-    public int getHealth() {
-        return health;
-    }
+    private void setUnitAppearance() {
+        setId("tuimg");  
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
+        switch (type) {
+            case INFANTRY:
+                getStyleClass().add("infantry");
+                break;
+            case MECHANIZED_INFANTRY:
+                getStyleClass().add("mechanized_infantry");
+                break;
+            case TANK:
+                getStyleClass().add("tank");
+                break;
+            case MOBILE_ARTILLERY:
+                getStyleClass().add("mobile_artillery");
+                break;
+            case ANTI_AIR:
+                getStyleClass().add("anti_air");
+                break;
+            case FIGHTER:
+                getStyleClass().add("fighter");
+                break;
+            case BOMBER:
+                getStyleClass().add("bomber");
+                break;
+            case BATTLE_COPTER:
+                getStyleClass().add("battle_copter");
+                break;
+        }
     }
 }
-

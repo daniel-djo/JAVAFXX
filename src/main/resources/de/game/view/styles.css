@@ -45,45 +45,68 @@
     -fx-shape: "M 20 0 L 180 0 Q 200 0, 200 20 L 200 180 Q 200 200, 180 200 L 20 200 Q 0 200, 0 180 L 0 20 Q 0 0, 20 0 Z";
 }
 
-#plain {
-    -fx-background-image: url('pictures/map/gras.png');
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
-
-#wood {
-    -fx-background-image: url('pictures/map/forest.png');
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
-
-#mountain {
-    -fx-background-image: url('pictures/map/mountain.png');
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
-
-#sea {
-    -fx-background-image: url('pictures/map/water.png');
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
-
-#street {
-    -fx-background-image: url('pictures/map/road.png');
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-}
-
 .imagemap1:hover, .imagemap2:hover, .imagemap3:hover {
     -fx-border-color: #ffffff;
     -fx-border-width: 2px;
     -fx-border-radius: 20px;
     -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.8), 10, 0, 0, 0);
     -fx-transition: border-color 0.3s ease;
+}
+
+#tuimg{
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.plain {
+    -fx-background-image: url('pictures/map/gras.png');
+}
+
+.wood {
+    -fx-background-image: url('pictures/map/forest.png');
+}
+
+.mountain {
+    -fx-background-image: url('pictures/map/mountain.png');
+}
+
+.sea {
+    -fx-background-image: url('pictures/map/water.png');
+}
+
+.street {
+    -fx-background-image: url('pictures/map/road.png');
+}
+
+.infantry{
+
+}
+
+.mechanized_infantry{
+    -fx-background-image: url('pictures/');
+}
+
+.tank{
+    -fx-background-image: url('pictures/');
+}
+
+.mobile_artillery{
+    -fx-background-image: url('pictures/');
+}
+
+.anti_air{
+    -fx-background-image: url('pictures/');
+}
+
+.fighter{
+    -fx-background-image: url('pictures/');
+}
+
+.bomber{
+    -fx-background-image: url('pictures/');
+}
+
+.battle_copter{
+    -fx-background-image: url('pictures/');
 }

@@ -25,8 +25,4 @@ public class Controller {
     @FXML
     private void showOptions() {
     }
-
-    @FXML
-    private void startGame() {
-    }
 }
