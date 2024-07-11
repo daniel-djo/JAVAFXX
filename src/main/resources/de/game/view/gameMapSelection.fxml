@@ -9,9 +9,9 @@
     <children>
         <Button text="Back to Menu" onAction="#switchToMainMenu" styleClass="button"/>
         <HBox spacing="10" alignment="CENTER">
-            <Button id="imagemap1" text="Option 1" styleClass="imagemap1"/>
-            <Button id="imagemap2" text="Option 2" styleClass="imagemap2"/>
-            <Button id="imagemap3" text="Option 3" styleClass="imagemap3"/>
+            <Button id="imagemap1" text="Option 1" onAction="#createMapLI" styleClass="imagemap1"/>
+            <Button id="imagemap2" text="Option 2" onAction="#createMapES" styleClass="imagemap2"/>
+            <Button id="imagemap3" text="Option 3" onAction="#createMapPD" styleClass="imagemap3"/>
         </HBox>
     </children>
 </VBox>

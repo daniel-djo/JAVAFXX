@@ -14,14 +14,7 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        // Initialisierungslogik
-        for (int row = 0; row < 10; row++) {
-            for (int col = 0; col < 10; col++) {
-                Button button = new Button();
-                button.setPrefSize(50, 50);
-                gameGrid.add(button, col, row);
-            }
-        }
+        System.out.println("GameController initialized");
     }
 
     @FXML
@@ -32,5 +25,16 @@ public class GameController {
     public void Game() {
         Player player1 = new Player("Player 1");
         Player player2 = new Player("Player 2");
+    }
+
+    public void createGrid(int rows, int cols) {
+        gameGrid.getChildren().clear();
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                Button button = new Button();
+                button.setPrefSize(50, 50);
+                gameGrid.add(button, col, row);
+            }
+        }
     }
 }

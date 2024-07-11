@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Main.primaryStage = primaryStage; // Set the primary stage
+        Main.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/de/game/view/mainMenu.fxml"));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/de/game/view/styles.css").toExternalForm());
@@ -25,11 +25,33 @@ public class Main extends Application {
     public static void setRoot(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/de/game/view/" + fxml + ".fxml"));
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = primaryStage.getScene();
+        if (scene == null) {
+            scene = new Scene(root, 800, 600);
+            primaryStage.setScene(scene);
+        } else {
+            scene.setRoot(root);
+        }
         scene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm());
-        primaryStage.setScene(scene);
     }
-    
+
+    public static void setScene(FXMLLoader fxmlLoader) throws IOException {
+        Parent root = fxmlLoader.getRoot();
+        Scene scene = primaryStage.getScene();
+        if (scene == null) {
+            scene = new Scene(root, 800, 600);
+            primaryStage.setScene(scene);
+        } else {
+            scene.setRoot(root);
+        }
+        scene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm());
+    }
+
+    public static FXMLLoader getLoader(String fxml) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/de/game/view/" + fxml + ".fxml"));
+        loader.load();
+        return loader;
+    }
 
     public static void main(String[] args) {
         launch(args);
