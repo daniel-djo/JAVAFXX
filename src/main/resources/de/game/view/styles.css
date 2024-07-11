@@ -88,11 +88,11 @@
 }
 
 .tank{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/tank/tank.png');
 }
 
 .mobile_artillery{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/tank/tank.png');
 }
 
 .anti_air{
@@ -109,4 +109,13 @@
 
 .battle_copter{
     -fx-background-image: url('pictures/');
+}
+
+.red {
+    -fx-effect: innershadow(three-pass-box, rgba(255, 0, 0, 0.5), 100, 0.5, 0, 0);
+}
+
+.blue {
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 255, 0.5), 100, 0.5, 0, 0);
+    -fx-scale-x: -1;
 }
