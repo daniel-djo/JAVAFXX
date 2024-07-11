@@ -45,7 +45,7 @@ public class GameMapSelectionController {
 
     @FXML
     private void createMapES() throws IOException {
-        char[][] map = {
+       char[][] map = {
             {'W', 'P', 'P', 'P', 'W', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'P', 'W'},
             {'P', 'P', 'P', 'P', 'S', 'S', 'M', 'W', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'T', 'P', 'P'},
             {'P', 'P', 'P', 'P', 'S', 'S', 'S', 'W', 'P', 'P', 'P', 'P', 'W', 'P', 'P', 'P', 'T', 'P', 'W'},
