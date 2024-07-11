@@ -14,7 +14,7 @@ public class Controller {
 
     @FXML
     private void switchToGame() throws IOException {
-        Main.setRoot("gameView");
+        Main.setRoot("gameView.fxml");
     }
 
     @FXML
@@ -22,12 +22,11 @@ public class Controller {
         System.exit(0);
     }
 
-    public void loadGame() {
+    @FXML
+    private void showOptions() {
     }
 
-    public void showOptions() {
-    }
-
-    public void startGame() {
+    @FXML
+    private void startGame() {
     }
 }
