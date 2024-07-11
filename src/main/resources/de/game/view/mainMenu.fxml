@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.layout.VBox?>
-<BorderPane fx:id="gameMenu" id="gameMenu" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="de.game.controllers.Controller"
-            prefWidth="800" prefHeight="600">
+<BorderPane id="gameMenu" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.game.controllers.Controller">
 
     <center>
         <VBox alignment="CENTER" spacing="20">
-            <Button text="New Game" onAction="#switchToGame" styleClass="button" />
-            <Button text="Load Game" onAction="#loadGame" styleClass="button" />
-            <Button text="Options" onAction="#showOptions" styleClass="button" />
-            <Button text="Exit" onAction="#exitGame" styleClass="button" />
+            <Button onAction="#switchToGame" styleClass="button" text="New Game" textAlignment="CENTER" />
+            <Button onAction="#showOptions" styleClass="button" text="Options" />
+            <Button cancelButton="true" onAction="#exitGame" styleClass="button" text="Exit" />
         </VBox>
     </center>
 

@@ -2,27 +2,47 @@ package de.game;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Main extends Application {
     private static Stage primaryStage;
+    public static String viewPath = "/de/game/view/";
 
+    @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/de/game/view/mainMenu.fxml"));
-        Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(getClass().getResource("/de/game/view/styles.css").toExternalForm());
-        primaryStage.setTitle("Advance Wars");
+        Main.primaryStage = primaryStage;
+
+        String mainMenuFXML = viewPath + "mainMenu.fxml";
+        System.out.println("Loading mainMenu.fxml from: " + getClass().getResource(mainMenuFXML));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(mainMenuFXML));
+        BorderPane root = loader.load();
+
+        String stylesCSS = viewPath + "styles.css";
+        System.out.println("Loading styles.css from: " + getClass().getResource(stylesCSS));
+
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource(stylesCSS)).toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     public static void setRoot(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/de/game/view/" + fxml + ".fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        String fxmlPath = viewPath + fxml;
+        System.out.println("Loading " + fxml + " from: " + Main.class.getResource(fxmlPath));
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlPath));
+        BorderPane root = loader.load();
+        String stylesCSS = viewPath + "styles.css";
+        System.out.println("Loading styles.css from: " + Main.class.getResource(stylesCSS));
+
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource(stylesCSS)).toExternalForm());
         primaryStage.setScene(scene);
     }
 
