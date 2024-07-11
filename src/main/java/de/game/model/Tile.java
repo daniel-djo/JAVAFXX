@@ -1,8 +1,8 @@
 package de.game.model;
 
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
-public class Tile extends Button {
+public class Tile extends Label {
     private TileType type;
 
     public Tile(TileType type) {
@@ -16,21 +16,23 @@ public class Tile extends Button {
     }
 
     private void setTileAppearance() {
+        setId("tuimg");
+
         switch (type) {
             case PLAIN:
-                setId("plain");
+                getStyleClass().add("plain");
                 break;
             case WOOD:
-                setId("wood");
+                getStyleClass().add("wood");
                 break;
             case MOUNTAIN:
-                setId("mountain");
+                getStyleClass().add("mountain");
                 break;
             case SEA:
-                setId("sea");
+                getStyleClass().add("sea");
                 break;
             case STREET:
-                setId("street");
+                getStyleClass().add("street");
                 break;
         }
     }    
