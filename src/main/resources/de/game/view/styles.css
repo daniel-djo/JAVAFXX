@@ -5,24 +5,23 @@
 }
 
 .menuButton {
-    -fx-background-color: linear-gradient(to bottom, #7e7e7e, #5e5e5e);
-    -fx-background-radius: 20px; /* Rundung des Buttons */
+    -fx-background-color: #3a500d;
+    -fx-background-radius: 20px;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-padding: 10px 20px;
     -fx-border-color: transparent;
     -fx-border-width: 1px;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
-    -fx-background-image: url('/de/game/view/pictures/css/buttonMenu.png');
     -fx-background-size: cover;
-    -fx-background-position: center; /* Zentriert das Hintergrundbild */
-    -fx-background-repeat: no-repeat; /* Verhindert Wiederholung des Hintergrundbilds */
-    -fx-cursor: hand; /* Zeigt die Handcursor-Form beim Überfahren an */
-    -fx-min-width: 200px; /* Mindestbreite des Buttons */
-    -fx-min-height: 40px; /* Mindesthöhe des Buttons */
-    -fx-max-width: 200px; /* Maximale Breite des Buttons */
-    -fx-max-height: 40px; /* Maximale Höhe des Buttons */
-    -fx-alignment: center; /* Zentriert den Text horizontal im Button */
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-cursor: hand;
+    -fx-min-width: 200px;
+    -fx-min-height: 40px;
+    -fx-max-width: 200px;
+    -fx-max-height: 40px;
+    -fx-alignment: center;
 }
 
 .menuButton:hover {
@@ -33,16 +32,23 @@
     -fx-transition: border-color 0.3s ease; /* Animiert den Rahmeneffekt */
 }
 
-
-
-
-
 .imagemap1, .imagemap2, .imagemap3 {
     -fx-background-image: url("pictures/background.png");
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-min-height: 200px;
     -fx-min-width: 200px;
-    -fx-text-fill: rgb(0, 0, 0); 
+    -fx-text-fill: rgb(0, 0, 0);
     -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
+    -fx-shape: "M 20 0 L 180 0 Q 200 0, 200 20 L 200 180 Q 200 200, 180 200 L 20 200 Q 0 200, 0 180 L 0 20 Q 0 0, 20 0 Z";
+}
+
+.imagemap1:hover, .imagemap2:hover, .imagemap3:hover {
+    -fx-border-color: #ffffff;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.8), 10, 0, 0, 0);
+    -fx-transition: border-color 0.3s ease;
 }
