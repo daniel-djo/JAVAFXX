@@ -14,7 +14,6 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        System.out.println("GameController initialized");
     }
 
     @FXML

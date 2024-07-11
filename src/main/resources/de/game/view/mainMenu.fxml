@@ -7,9 +7,9 @@
 
     <center>
         <VBox alignment="CENTER" spacing="20">
-            <Button onAction="#switchToMapSelection" styleClass="button" text="New Game" textAlignment="CENTER" />
-            <Button onAction="#showOptions" styleClass="button" text="Options" />
-            <Button cancelButton="true" onAction="#exitGame" styleClass="button" text="Exit" />
+            <Button onAction="#switchToMapSelection" styleClass="menuButton" text="New Game" textAlignment="CENTER" />
+            <Button onAction="#showOptions" styleClass="menuButton" text="Options" />
+            <Button cancelButton="true" onAction="#exitGame" styleClass="menuButton" text="Exit" />
         </VBox>
     </center>
 

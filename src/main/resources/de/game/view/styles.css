@@ -4,7 +4,7 @@
     -fx-background-position: center;
 }
 
-.button {
+.menuButton {
     -fx-background-color: #808080; /* Hintergrundfarbe der Schaltfläche */
     -fx-text-fill: white; /* Textfarbe */
     -fx-font-size: 16px; /* Schriftgröße */
@@ -14,7 +14,7 @@
     -fx-border-width: 2px; /* Randbreite */
 }
 
-.button:hover {
+.menuButton:hover {
     -fx-background-color: #45a049; /* Hintergrundfarbe bei Mausüberführung */
 }
 
