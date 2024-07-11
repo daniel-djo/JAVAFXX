@@ -29,21 +29,62 @@
     -fx-border-width: 2px;
     -fx-border-radius: 20px;
     -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.8), 10, 0, 0, 0);
-    -fx-transition: border-color 0.3s ease; /* Animiert den Rahmeneffekt */
+    -fx-transition: border-color 0.3s ease;
 }
 
-.imagemap1, .imagemap2, .imagemap3 {
-    -fx-background-image: url("pictures/background.png");
+.button {
+    -fx-font-family: Arial;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.imagemap1 {
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-min-height: 200px;
     -fx-min-width: 200px;
-    -fx-text-fill: rgb(0, 0, 0);
     -fx-padding: 10px;
-   -fx-cursor: hand;
+    -fx-cursor: hand;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
     -fx-shape: "M 20 0 L 180 0 Q 200 0, 200 20 L 200 180 Q 200 200, 180 200 L 20 200 Q 0 200, 0 180 L 0 20 Q 0 0, 20 0 Z";
+    -fx-background-image: url("pictures/map/littleIsland.png");
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
+
+.imagemap2 {
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-min-height: 200px;
+    -fx-min-width: 200px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
+    -fx-shape: "M 20 0 L 180 0 Q 200 0, 200 20 L 200 180 Q 200 200, 180 200 L 20 200 Q 0 200, 0 180 L 0 20 Q 0 0, 20 0 Z";
+    -fx-background-image: url("pictures/map/eonSprings.png");
+}
+
+.imagemap1 .text, .imagemap2 .text, .imagemap3 .text {
+    -fx-effect: dropshadow(gaussian, black, 1, 0, 0, 1);
+}
+
+.imagemap3 {
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-min-height: 200px;
+    -fx-min-width: 200px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 4, 0, 0, 1);
+    -fx-shape: "M 20 0 L 180 0 Q 200 0, 200 20 L 200 180 Q 200 200, 180 200 L 20 200 Q 0 200, 0 180 L 0 20 Q 0 0, 20 0 Z";
+    -fx-background-image: url("pictures/map/pistonDam.png");
+}
+
 
 .imagemap1:hover, .imagemap2:hover, .imagemap3:hover {
     -fx-border-color: #ffffff;
