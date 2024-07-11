@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2994a791-03bc-48b8-88a8-d346975c098e" name="Changes" comment="Added cmd messages">
+    <list default="true" id="2994a791-03bc-48b8-88a8-d346975c098e" name="Changes" comment="Changed menu design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/de/game/view/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/game/view/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +68,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -86,6 +88,15 @@
       <recent name="C:\Users\H0107960\IdeaProjects\JavaFXX\src\main\resources\de\game\view" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.game.Main" />
+      <module name="JavaFXX" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -104,7 +115,7 @@
       <workItem from="1720623830806" duration="3858000" />
       <workItem from="1720627703284" duration="1452000" />
       <workItem from="1720681286115" duration="3236000" />
-      <workItem from="1720684880735" duration="4264000" />
+      <workItem from="1720684880735" duration="9306000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -170,7 +181,39 @@
       <option name="project" value="LOCAL" />
       <updated>1720692401575</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added pictures from units">
+      <option name="closed" value="true" />
+      <created>1720693210773</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720693210773</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added pictures from units">
+      <option name="closed" value="true" />
+      <created>1720693327543</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720693327543</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added pictures for map">
+      <option name="closed" value="true" />
+      <created>1720694353081</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720694353081</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changed menu design">
+      <option name="closed" value="true" />
+      <created>1720697880835</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720697880835</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +236,9 @@
     <MESSAGE value="Added fields" />
     <MESSAGE value="Created Startmenu" />
     <MESSAGE value="Added cmd messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added cmd messages" />
+    <MESSAGE value="Added pictures from units" />
+    <MESSAGE value="Added pictures for map" />
+    <MESSAGE value="Changed menu design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed menu design" />
   </component>
 </project>

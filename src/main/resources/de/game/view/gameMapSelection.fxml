@@ -7,11 +7,11 @@
 
 <VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.game.controllers.GameMapSelectionController" id="gameMenu">
     <children>
-        <Button text="Back to Menu" onAction="#switchToMainMenu" styleClass="button"/>
         <HBox spacing="10" alignment="CENTER">
             <Button id="imagemap1" text="Little Island" onAction="#createMapLI" styleClass="imagemap1"/>
             <Button id="imagemap2" text="Eon Springs" onAction="#createMapES" styleClass="imagemap2"/>
             <Button id="imagemap3" text="Piston Dam" onAction="#createMapPD" styleClass="imagemap3"/>
         </HBox>
+        <Button text="Back to Menu" onAction="#switchToMainMenu" styleClass="menuButton"/>
     </children>
 </VBox>

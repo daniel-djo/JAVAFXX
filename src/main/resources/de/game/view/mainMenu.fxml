@@ -5,12 +5,19 @@
 
 <BorderPane id="gameMenu" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.game.controllers.Controller">
 
+    <top>
+        <VBox alignment="CENTER" style="-fx-translate-y: 30px;">
+            <Label style="-fx-font-size: 50px; -fx-font-weight: bold; -fx-text-fill: black; -fx-padding: 10px; -fx-font-family: 'Arial Black';" text="Modern Wars" />
+        </VBox>
+    </top>
     <center>
-        <HBox alignment="CENTER" spacing="20">
-            <Button onAction="#switchToMapSelection" styleClass="menuButton" text="New Game" textAlignment="CENTER" />
-            <Button onAction="#showOptions" styleClass="menuButton" text="Options" />
-            <Button cancelButton="true" onAction="#exitGame" styleClass="menuButton" text="Exit" />
-        </HBox>
+        <VBox style="-fx-padding: 20px; -fx-translate-y: 70px;">
+            <HBox alignment="CENTER" spacing="20">
+                <Button onAction="#switchToMapSelection" styleClass="menuButton" text="New Game" textAlignment="CENTER" />
+                <Button onAction="#showOptions" styleClass="menuButton" text="Options" />
+                <Button cancelButton="true" onAction="#exitGame" styleClass="menuButton" text="Exit" />
+            </HBox>
+        </VBox>
     </center>
 
 </BorderPane>
