@@ -19,9 +19,7 @@ public class GameController {
 
     @FXML
     private void switchToMainMenu() throws IOException {
-        String mainMenuFXML = "mainMenu.fxml";
-        System.out.println("Switching to " + mainMenuFXML);
-        Main.setRoot(mainMenuFXML);
+        Main.setRoot("mainMenu");
     }
 
     public void Game() {

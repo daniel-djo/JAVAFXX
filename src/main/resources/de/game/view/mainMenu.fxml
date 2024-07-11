@@ -7,7 +7,7 @@
 
     <center>
         <VBox alignment="CENTER" spacing="20">
-            <Button onAction="#switchToGame" styleClass="button" text="New Game" textAlignment="CENTER" />
+            <Button onAction="#switchToMapSelection" styleClass="button" text="New Game" textAlignment="CENTER" />
             <Button onAction="#showOptions" styleClass="button" text="Options" />
             <Button cancelButton="true" onAction="#exitGame" styleClass="button" text="Exit" />
         </VBox>
