@@ -80,33 +80,42 @@
 }
 
 .infantry{
-
+    -fx-background-image: url('pictures/infantry/inf.png');
 }
 
 .mechanized_infantry{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/mech_infantry/mech.png');
 }
 
 .tank{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/tank/tank.png');
 }
 
 .mobile_artillery{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/artillery/artillery.png');
 }
 
 .anti_air{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/antiair/air.png');
 }
 
 .fighter{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/fighter/fighter.png');
 }
 
 .bomber{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/bomber/bomber.png');
 }
 
 .battle_copter{
-    -fx-background-image: url('pictures/');
+    -fx-background-image: url('pictures/bcopter/bcopter.png');
+}
+
+.red {
+    -fx-effect: innershadow(three-pass-box, rgba(255, 0, 0, 0.5), 100, 0.5, 0, 0);
+}
+
+.blue {
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 255, 0.5), 100, 0.5, 0, 0);
+    -fx-scale-x: -1;
 }

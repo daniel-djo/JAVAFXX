@@ -4,14 +4,17 @@ import javafx.scene.control.Button;
 
 public class Unit extends Button {
     private UnitType type;
+    private String color;
 
-    public Unit(UnitType type) {
+    public Unit(UnitType type, String color) {
         this.type = type;
+        this.color = color;
         setUnitAppearance();
     }
 
-    public void setType(UnitType type) {
+    public void setType(UnitType type, String color) {
         this.type = type;
+        this.color = color;
         setUnitAppearance();
     }
 
@@ -19,9 +22,14 @@ public class Unit extends Button {
         return type;
     }
 
-    private void setUnitAppearance() {
-        setId("tuimg");  
+    public String getColor() {
+        return color;
+    }
 
+    private void setUnitAppearance() {
+        setId("tuimg");
+
+        getStyleClass().clear();
         switch (type) {
             case INFANTRY:
                 getStyleClass().add("infantry");
@@ -46,6 +54,15 @@ public class Unit extends Button {
                 break;
             case BATTLE_COPTER:
                 getStyleClass().add("battle_copter");
+                break;
+        }
+
+        switch (color) {
+            case "R":
+                getStyleClass().add("red");
+                break;
+            case "B":
+                getStyleClass().add("blue");
                 break;
         }
     }

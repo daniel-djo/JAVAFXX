@@ -26,7 +26,7 @@ public class GameController {
     public void Game() {
     }
 
-    public void createGrid(char[][] map, char[][] unitMap) {
+    public void createGrid(char[][] map, String[][] unitMap) {
     int rows = map.length;
     int cols = map[0].length;
     gameGrid.getChildren().clear();
@@ -37,9 +37,10 @@ public class GameController {
             tile.setPrefSize(50, 50);
             gameGrid.add(tile, col, row);
 
-            if (unitMap != null && unitMap[row][col] != ' ') {
-                UnitType unitType = UnitType.fromSymbol(unitMap[row][col]);
-                Unit unit = new Unit(unitType);
+            if (unitMap != null && unitMap[row][col] != " ") {
+                char unitSymbol = unitMap[row][col].charAt(0);
+                String unitColor = unitMap[row][col].substring(1);
+                Unit unit = new Unit(UnitType.fromSymbol(unitSymbol), unitColor);
                 unit.setPrefSize(50, 50);
                 gameGrid.add(unit, col, row);
             }
