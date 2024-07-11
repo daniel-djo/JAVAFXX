@@ -15,6 +15,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         Main.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/de/game/view/mainMenu.fxml"));
+        System.out.println("'mainMenu.fxml' successfully loaded: " + (root != null));
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/de/game/view/styles.css").toExternalForm());
         primaryStage.setTitle("Advance Wars");
@@ -33,6 +34,8 @@ public class Main extends Application {
             scene.setRoot(root);
         }
         scene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm());
+
+        System.out.println("Switched scene to: " + fxml);
     }
 
     public static void setScene(FXMLLoader fxmlLoader) throws IOException {
@@ -45,6 +48,7 @@ public class Main extends Application {
             scene.setRoot(root);
         }
         scene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm());
+        System.out.println("Gamemap scene successfully set");
     }
 
     public static FXMLLoader getLoader(String fxml) throws IOException {

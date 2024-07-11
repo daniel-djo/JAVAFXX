@@ -18,6 +18,7 @@ public class Controller {
 
     @FXML
     private void exitGame() {
+        System.out.println("Game closed by user");
         System.exit(0);
     }
 
