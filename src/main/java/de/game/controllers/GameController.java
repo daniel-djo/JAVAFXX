@@ -1,6 +1,7 @@
 package de.game.controllers;
 
 import de.game.Main;
+import de.game.model.Player;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -28,5 +29,10 @@ public class GameController {
         String mainMenuFXML = "mainMenu.fxml";
         System.out.println("Switching to " + mainMenuFXML);
         Main.setRoot(mainMenuFXML);
+    }
+
+    public void Game() {
+        Player player1 = new Player("Player 1");
+        Player player2 = new Player("Player 2");
     }
 }

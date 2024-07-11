@@ -8,6 +8,11 @@ import java.io.IOException;
 public class Controller {
 
     @FXML
+    private void switchToMapSelection() throws IOException {
+        Main.setRoot("gameMapSelection");
+    }
+
+    @FXML
     private void switchToGame() throws IOException {
         Main.setRoot("gameView.fxml");
     }

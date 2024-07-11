@@ -28,6 +28,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource(stylesCSS)).toExternalForm());
+        primaryStage.setTitle("Advance Wars");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -45,8 +46,9 @@ public class Main extends Application {
         scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource(stylesCSS)).toExternalForm());
         primaryStage.setScene(scene);
     }
+    
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
