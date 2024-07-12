@@ -21,8 +21,4 @@ public class Controller {
         System.out.println("Game closed by user");
         System.exit(0);
     }
-
-    @FXML
-    private void showOptions() {
-    }
 }
