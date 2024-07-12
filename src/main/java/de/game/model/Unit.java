@@ -5,10 +5,12 @@ import javafx.scene.control.Button;
 public class Unit extends Button {
     private UnitType type;
     private String color;
+    private boolean selected;
 
     public Unit(UnitType type, String color) {
         this.type = type;
         this.color = color;
+        this.selected = false;
         setUnitAppearance();
     }
 
@@ -26,6 +28,16 @@ public class Unit extends Button {
         return color;
     }
 
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+        setUnitAppearance();
+    }
+    
     private void setUnitAppearance() {
         setId("tuimg");
 
