@@ -216,10 +216,10 @@
 }
 
 .red {
-    -fx-effect: innershadow(three-pass-box, rgba(255, 0, 0, 0.5), 100, 0.5, 0, 0);
+    -fx-effect: innershadow(three-pass-box, rgba(255, 0, 0, 0.3), 100, 0.5, 0, 0);
 }
 
 .blue {
-    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 255, 0.5), 100, 0.5, 0, 0);
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 255, 0.3), 100, 0.5, 0, 0);
     -fx-scale-x: -1;
 }
