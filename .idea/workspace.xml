@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2994a791-03bc-48b8-88a8-d346975c098e" name="Changes" comment="added fight png, deleted unnecessary addons, changed road png">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/game/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/game/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/game/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/game/controllers/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/de/game/view/gameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/game/view/gameView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/de/game/view/pictures/css/buttonMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/game/view/pictures/css/buttonMenu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/de/game/view/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/game/view/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +31,12 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/daniel-djo/JavaFXX.git&quot;,
-    &quot;accountId&quot;: &quot;d899703c-1070-4510-a510-db56c943856b&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/daniel-djo/JavaFXX.git",
+    "accountId": "b8bcc6e6-cbf0-4233-99cf-2739b7a3b9d4"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -68,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "b-daniel-4",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -117,6 +111,7 @@
       <workItem from="1720703372358" duration="3097000" />
       <workItem from="1720769125755" duration="156000" />
       <workItem from="1720769306831" duration="6074000" />
+      <workItem from="1720790563188" duration="146000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
