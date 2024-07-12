@@ -135,7 +135,7 @@ public class GameController {
             int col = move[1];
 
             Tile tile = getTileAt(row, col);
-            if (tile != null) {
+            if (tile != null && !isUnitAt(row, col)) {
                 double width = tile.getWidth();
                 double height = tile.getHeight();
 
@@ -157,8 +157,17 @@ public class GameController {
         return null;
     }
 
+    private boolean isUnitAt(int row, int col) {
+        for (var node : gameGrid.getChildren()) {
+            if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col && node instanceof Unit) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void moveUnitToPosition(int targetRow, int targetCol) {
-        if (selectedUnit != null) {
+        if (selectedUnit != null && !isUnitAt(targetRow, targetCol)) {
             gameGrid.getChildren().remove(selectedUnit);
             gameGrid.add(selectedUnit, targetCol, targetRow);
             movedUnits.add(selectedUnit);
