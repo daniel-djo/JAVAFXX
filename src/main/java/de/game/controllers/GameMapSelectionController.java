@@ -40,7 +40,7 @@ public class GameMapSelectionController {
             {" ", " ", "TR", "IR", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
             {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
         };
-        switchToGame(map, unitMap);
+        switchToGame(map, unitMap, "Little Island");
     }
 
     @FXML
@@ -84,7 +84,7 @@ public class GameMapSelectionController {
             {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
             {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
         };
-        switchToGame(map, unitMap); 
+        switchToGame(map, unitMap, "Eon Springs"); 
     }
 
     @FXML
@@ -122,14 +122,14 @@ public class GameMapSelectionController {
             {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
             {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
         };
-        switchToGame(map, unitMap); 
+        switchToGame(map, unitMap, "Piston Dam"); 
     }
 
-    private void switchToGame(char[][] map, String[][] unitMap) throws IOException {
+    private void switchToGame(char[][] map, String[][] unitMap, String mapname) throws IOException {
         FXMLLoader loader = Main.getLoader("gameView");
         GameController controller = loader.getController();
         controller.createGrid(map, unitMap);
-
+        System.out.println("Gamemap scene successfully set to: " + mapname);
         Main.setScene(loader);
     }
 }

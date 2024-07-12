@@ -48,7 +48,6 @@ public class Main extends Application {
             scene.setRoot(root);
         }
         scene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm());
-        System.out.println("Gamemap scene successfully set");
     }
 
     public static FXMLLoader getLoader(String fxml) throws IOException {
