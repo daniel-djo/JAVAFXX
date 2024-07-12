@@ -26,7 +26,9 @@
     </center>
     <bottom>
         <HBox styleClass="ingameHBox2" alignment="CENTER" spacing="20">
-            <Label text="Player 1 ist am Zug" styleClass="footerLabel"/>
+            <Label fx:id="turnLabel" text="Rot ist am Zug" styleClass="footerLabel"/>
+            <Button text="Zug beenden" onAction="#endTurn" styleClass="endTurnButton"/>
         </HBox>
     </bottom>
 </BorderPane>
+

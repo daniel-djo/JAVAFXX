@@ -6,6 +6,7 @@ import de.game.model.TileType;
 import de.game.model.Unit;
 import de.game.model.UnitType;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -19,7 +20,14 @@ public class GameController {
     @FXML
     private GridPane gameGrid;
 
+    @FXML
+    private Label turnLabel;
+
     private Unit selectedUnit;
+
+    private boolean isRedTurn = true;
+
+    private Set<Unit> movedUnits = new HashSet<>();
 
     @FXML
     public void initialize() {
@@ -57,20 +65,27 @@ public class GameController {
     }
 
     private void handleUnitClick(MouseEvent event) {
-        if (selectedUnit != null) {
-            selectedUnit.setSelected(false);
-            clearHighlights();
+        Unit clickedUnit = (Unit) event.getSource();
+        if ((isRedTurn && clickedUnit.getColor().equals("R")) || (!isRedTurn && clickedUnit.getColor().equals("B"))) {
+            if (movedUnits.contains(clickedUnit)) {
+                return; // Einheit hat sich bereits bewegt
+            }
+
+            if (selectedUnit != null) {
+                selectedUnit.setSelected(false);
+                clearHighlights();
+            }
+
+            selectedUnit = clickedUnit;
+            selectedUnit.setSelected(true);
+
+            int unitRow = GridPane.getRowIndex(selectedUnit);
+            int unitCol = GridPane.getColumnIndex(selectedUnit);
+
+            List<int[]> possibleMoves = calculatePossibleMoves(selectedUnit, unitRow, unitCol);
+
+            highlightPossibleMoves(possibleMoves);
         }
-
-        selectedUnit = (Unit) event.getSource();
-        selectedUnit.setSelected(true);
-
-        int unitRow = GridPane.getRowIndex(selectedUnit);
-        int unitCol = GridPane.getColumnIndex(selectedUnit);
-
-        List<int[]> possibleMoves = calculatePossibleMoves(selectedUnit, unitRow, unitCol);
-
-        highlightPossibleMoves(possibleMoves);
     }
 
     private List<int[]> calculatePossibleMoves(Unit unit, int unitRow, int unitCol) {
@@ -146,6 +161,7 @@ public class GameController {
         if (selectedUnit != null) {
             gameGrid.getChildren().remove(selectedUnit);
             gameGrid.add(selectedUnit, targetCol, targetRow);
+            movedUnits.add(selectedUnit);
             clearHighlights();
             selectedUnit.setSelected(false);
             selectedUnit = null;
@@ -154,6 +170,13 @@ public class GameController {
 
     private void clearHighlights() {
         gameGrid.getChildren().removeIf(node -> node instanceof Rectangle);
+    }
+
+    @FXML
+    private void endTurn() {
+        isRedTurn = !isRedTurn;
+        turnLabel.setText(isRedTurn ? "Rot ist am Zug" : "Blau ist am Zug");
+        movedUnits.clear();
     }
 
     private static class Node {
