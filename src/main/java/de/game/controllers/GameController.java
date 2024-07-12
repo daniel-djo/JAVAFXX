@@ -12,8 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GameController {
 
@@ -76,18 +75,42 @@ public class GameController {
 
     private List<int[]> calculatePossibleMoves(Unit unit, int unitRow, int unitCol) {
         int movement = unit.getType().getMovement();
+        Map<TileType, Integer> movementCosts = unit.getType().getMovementCosts();
         List<int[]> possibleMoves = new ArrayList<>();
 
-        for (int row = unitRow - movement; row <= unitRow + movement; row++) {
-            for (int col = unitCol - movement; col <= unitCol + movement; col++) {
-                if (row >= 0 && row < gameGrid.getRowCount() && col >= 0 && col < gameGrid.getColumnCount()) {
-                    int distance = Math.abs(unitRow - row) + Math.abs(unitCol - col);
-                    if (distance <= movement) {
-                        possibleMoves.add(new int[]{row, col});
+        PriorityQueue<Node> openList = new PriorityQueue<>(Comparator.comparingInt(node -> node.cost));
+        Set<Node> closedList = new HashSet<>();
+
+        Node startNode = new Node(unitRow, unitCol, 0);
+        openList.add(startNode);
+
+        while (!openList.isEmpty()) {
+            Node currentNode = openList.poll();
+            if (!closedList.contains(currentNode)) {
+                closedList.add(currentNode);
+                possibleMoves.add(new int[]{currentNode.row, currentNode.col});
+
+                for (int[] direction : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
+                    int newRow = currentNode.row + direction[0];
+                    int newCol = currentNode.col + direction[1];
+
+                    if (newRow >= 0 && newRow < gameGrid.getRowCount() && newCol >= 0 && newCol < gameGrid.getColumnCount()) {
+                        Tile tile = getTileAt(newRow, newCol);
+                        if (tile != null) {
+                            TileType tileType = tile.getType();
+                            int moveCost = movementCosts.getOrDefault(tileType, Integer.MAX_VALUE);
+                            int newCost = currentNode.cost + moveCost;
+
+                            if (moveCost > 0 && newCost <= movement) {
+                                Node neighborNode = new Node(newRow, newCol, newCost);
+                                openList.add(neighborNode);
+                            }
+                        }
                     }
                 }
             }
         }
+
         return possibleMoves;
     }
 
@@ -131,5 +154,28 @@ public class GameController {
 
     private void clearHighlights() {
         gameGrid.getChildren().removeIf(node -> node instanceof Rectangle);
+    }
+
+    private static class Node {
+        int row, col, cost;
+
+        Node(int row, int col, int cost) {
+            this.row = row;
+            this.col = col;
+            this.cost = cost;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node node = (Node) o;
+            return row == node.row && col == node.col;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(row, col);
+        }
     }
 }

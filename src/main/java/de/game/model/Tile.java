@@ -15,6 +15,10 @@ public class Tile extends Label {
         setTileAppearance();
     }
 
+    public TileType getType(){
+        return this.type;
+    }
+
     private void setTileAppearance() {
         setId("tuimg");
 
