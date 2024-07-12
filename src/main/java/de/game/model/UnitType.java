@@ -5,10 +5,10 @@ public enum UnitType {
     MECHANIZED_INFANTRY('M', 2),
     TANK('T', 6),
     MOBILE_ARTILLERY('A', 5),
-    ANTI_AIR('R', 4),
+    ANTI_AIR('R', 6),
     FIGHTER('F', 9),
     BOMBER('B', 7),
-    BATTLE_COPTER('C', 8);
+    BATTLE_COPTER('C', 6);
 
     private char symbol;
     private int movement;
