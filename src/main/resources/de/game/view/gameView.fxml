@@ -13,7 +13,6 @@
         <HBox styleClass="ingameHBox" spacing="10">
             <Button text="🡄" onAction="#switchToMainMenu" styleClass="returnButton"/>
             <Region HBox.hgrow="ALWAYS"/>
-            <Label text="Game Title" styleClass="headerLabel" alignment="CENTER"/>
             <Region HBox.hgrow="ALWAYS"/>
         </HBox>
     </top>
