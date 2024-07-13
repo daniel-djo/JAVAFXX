@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
-
 <?import javafx.scene.layout.Region?>
+
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.game.controllers.GameController">
     <top>
         <HBox styleClass="ingameHBox" spacing="10">
@@ -27,7 +27,7 @@
         <HBox styleClass="ingameHBox2" alignment="CENTER" spacing="20">
             <Label fx:id="turnLabel" text="Rot ist am Zug" styleClass="footerLabel"/>
             <Button text="Zug beenden" onAction="#endTurn" styleClass="returnButton"/>
+            <Button fx:id="fightButton" text="Fight" onAction="#startFight" styleClass="returnButton" visible="false"/>
         </HBox>
     </bottom>
 </BorderPane>
-

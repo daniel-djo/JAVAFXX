@@ -6,11 +6,15 @@ import de.game.model.TileType;
 import de.game.model.Unit;
 import de.game.model.UnitType;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.*;
@@ -23,11 +27,16 @@ public class GameController {
     @FXML
     private Label turnLabel;
 
+    @FXML
+    private Button fightButton;
+
     private Unit selectedUnit;
 
     private boolean isRedTurn = true;
 
     private Set<Unit> movedUnits = new HashSet<>();
+
+    private Unit targetUnit;
 
     @FXML
     public void initialize() {
@@ -173,7 +182,8 @@ public class GameController {
             movedUnits.add(selectedUnit);
             clearHighlights();
             selectedUnit.setSelected(false);
-            selectedUnit = null;
+
+            checkForEnemiesInRange(targetRow, targetCol);
         }
     }
 
@@ -186,7 +196,79 @@ public class GameController {
         isRedTurn = !isRedTurn;
         turnLabel.setText(isRedTurn ? "Rot ist am Zug" : "Blau ist am Zug");
         movedUnits.clear();
+        fightButton.setVisible(false);
+        selectedUnit = null; // Beim Beenden des Zugs die ausgewählte Einheit zurücksetzen
     }
+
+    private void checkForEnemiesInRange(int unitRow, int unitCol) {
+        if (selectedUnit == null) return;
+
+        int attackRange = selectedUnit.getType().getRange();
+        for (int row = unitRow - attackRange; row <= unitRow + attackRange; row++) {
+            for (int col = unitCol - attackRange; col <= unitCol + attackRange; col++) {
+                if (row >= 0 && row < gameGrid.getRowCount() && col >= 0 && col < gameGrid.getColumnCount()) {
+                    if (isEnemyUnitAt(row, col)) {
+                        fightButton.setVisible(true);
+                        targetUnit = getUnitAt(row, col);
+                        return;
+                    }
+                }
+            }
+        }
+        fightButton.setVisible(false);
+        targetUnit = null;
+    }
+
+    private boolean isEnemyUnitAt(int row, int col) {
+        for (var node : gameGrid.getChildren()) {
+            if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col && node instanceof Unit) {
+                Unit unit = (Unit) node;
+                return !unit.getColor().equals(selectedUnit.getColor());
+            }
+        }
+        return false;
+    }
+
+    private Unit getUnitAt(int row, int col) {
+        for (var node : gameGrid.getChildren()) {
+            if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col && node instanceof Unit) {
+                return (Unit) node;
+            }
+        }
+        return null;
+    }
+
+    @FXML
+    private void startFight() {
+        if (selectedUnit != null && targetUnit != null) {
+            try {
+                FXMLLoader loader = Main.getLoader("gameFight");
+                Main.setScene(loader);
+    
+                GameFightController fightController = loader.getController();
+    
+                // Set the images for attacker and defender
+                fightController.setAttackerImage(selectedUnit);
+                fightController.setDefenderImage(targetUnit);
+    
+                int damage = fightController.calculateDamage(selectedUnit, targetUnit);
+    
+                targetUnit.setHp(targetUnit.getHp() - damage);
+    
+                if (targetUnit.getHp() <= 0) {
+                    gameGrid.getChildren().remove(targetUnit);
+                }
+    
+                fightButton.setVisible(false);
+                targetUnit = null;
+    
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+
 
     private static class Node {
         int row, col, cost;

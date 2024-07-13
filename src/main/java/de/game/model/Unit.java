@@ -6,10 +6,12 @@ public class Unit extends Button {
     private UnitType type;
     private String color;
     private boolean selected;
+    private int hp;
 
     public Unit(UnitType type, String color) {
         this.type = type;
         this.color = color;
+        this.hp = type.getHp();  // Initialisiert die HP basierend auf dem UnitType
         this.selected = false;
         setUnitAppearance();
     }
@@ -17,6 +19,7 @@ public class Unit extends Button {
     public void setType(UnitType type, String color) {
         this.type = type;
         this.color = color;
+        this.hp = type.getHp();  // Aktualisiert die HP beim Setzen des Typs
         setUnitAppearance();
     }
 
@@ -28,7 +31,6 @@ public class Unit extends Button {
         return color;
     }
 
-
     public boolean isSelected() {
         return selected;
     }
@@ -37,7 +39,19 @@ public class Unit extends Button {
         this.selected = selected;
         setUnitAppearance();
     }
-    
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+        if (this.hp < 0) {
+            this.hp = 0;
+        }
+        setUnitAppearance();
+    }
+
     private void setUnitAppearance() {
         setId("tuimg");
 
