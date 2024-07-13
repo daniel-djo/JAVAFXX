@@ -12,7 +12,7 @@ public class Main extends Application {
     private static Stage primaryStage;
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(@SuppressWarnings("exports") Stage primaryStage) throws IOException {
         Main.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/de/game/view/mainMenu.fxml"));
         System.out.println("'mainMenu.fxml' successfully loaded: " + (root != null));
@@ -38,7 +38,7 @@ public class Main extends Application {
         System.out.println("Switched scene to: " + fxml);
     }
 
-    public static void setScene(FXMLLoader fxmlLoader) throws IOException {
+    public static void setScene(@SuppressWarnings("exports") FXMLLoader fxmlLoader) throws IOException {
         Parent root = fxmlLoader.getRoot();
         Scene scene = primaryStage.getScene();
         if (scene == null) {
@@ -50,11 +50,17 @@ public class Main extends Application {
         scene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm());
     }
 
+    @SuppressWarnings("exports")
     public static FXMLLoader getLoader(String fxml) throws IOException {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/de/game/view/" + fxml + ".fxml"));
         loader.load();
         return loader;
     }
+
+    @SuppressWarnings("exports")
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+    }    
 
     public static void main(String[] args) {
         launch(args);

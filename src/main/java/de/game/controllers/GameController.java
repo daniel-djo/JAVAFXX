@@ -5,6 +5,7 @@ import de.game.model.Tile;
 import de.game.model.TileType;
 import de.game.model.Unit;
 import de.game.model.UnitType;
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,9 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
+
 
 import java.io.IOException;
 import java.util.*;
@@ -238,36 +243,82 @@ public class GameController {
         return null;
     }
 
+    private void checkForVictory() {
+    boolean redHasUnits = false;
+    boolean blueHasUnits = false;
+
+    for (var node : gameGrid.getChildren()) {
+        if (node instanceof Unit) {
+            Unit unit = (Unit) node;
+            if (unit.getColor().equals("R")) {
+                redHasUnits = true;
+            } else if (unit.getColor().equals("B")) {
+                blueHasUnits = true;
+            }
+        }
+    }
+
+    if (!redHasUnits || !blueHasUnits) {
+        String winningTeam = redHasUnits ? "Rot" : "Blau";
+        showVictoryMessage(winningTeam + " gewinnt!");
+    }
+}
+
+    private void showVictoryMessage(String message) {
+        Text victoryText = new Text(message);
+        victoryText.setFont(new Font(50));
+        victoryText.setFill(Color.RED);
+        
+        StackPane stackPane = new StackPane();
+        stackPane.getChildren().add(victoryText);
+        stackPane.setPrefSize(gameGrid.getWidth(), gameGrid.getHeight());
+        stackPane.setStyle("-fx-background-color: rgba(255, 255, 255, 0.8);");
+        
+        GridPane.setColumnSpan(stackPane, gameGrid.getColumnCount());
+        GridPane.setRowSpan(stackPane, gameGrid.getRowCount());
+        gameGrid.add(stackPane, 0, 0);
+    }
+
+
     @FXML
     private void startFight() {
         if (selectedUnit != null && targetUnit != null) {
             try {
+                Scene currentScene = gameGrid.getScene();
+
                 FXMLLoader loader = Main.getLoader("gameFight");
-                Main.setScene(loader);
-    
+                Scene fightScene = new Scene(loader.getRoot(), 800, 600);
+                fightScene.getStylesheets().add(Main.class.getResource("/de/game/view/styles.css").toExternalForm()); // CSS hinzufügen
+                Main.getPrimaryStage().setScene(fightScene);
+
                 GameFightController fightController = loader.getController();
-    
-                // Set the images for attacker and defender
                 fightController.setAttackerImage(selectedUnit);
                 fightController.setDefenderImage(targetUnit);
-    
+
                 int damage = fightController.calculateDamage(selectedUnit, targetUnit);
-    
+
                 targetUnit.setHp(targetUnit.getHp() - damage);
-    
                 if (targetUnit.getHp() <= 0) {
                     gameGrid.getChildren().remove(targetUnit);
                 }
-    
+
+                fightController.updateHpLabels(selectedUnit, targetUnit);
+
+                PauseTransition pause = new PauseTransition(Duration.seconds(5));
+                pause.setOnFinished(event -> {
+                    Main.getPrimaryStage().setScene(currentScene);
+                    checkForVictory();
+                });
+                pause.play();
+
                 fightButton.setVisible(false);
                 targetUnit = null;
-    
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
-    
 
 
     private static class Node {

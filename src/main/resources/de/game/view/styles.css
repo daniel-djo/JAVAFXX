@@ -224,6 +224,17 @@
     -fx-scale-x: -1;
 }
 
+.redFight {
+    -fx-effect: innershadow(three-pass-box, rgba(255, 0, 0, 0.3), 100, 0.5, 0, 0);
+}
+
+.blueFight {
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 255, 0.3), 100, 0.5, 0, 0);
+}
+
+.defend {
+    -fx-scale-x: -1;
+}
 
 #gamefightpicture {
     -fx-background-image: url("pictures/fight/fight.png");
